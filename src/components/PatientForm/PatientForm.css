@@ -1,0 +1,83 @@
+.patientform-container {
+    border-radius: 1em;
+    width: min(80vw, 500px);
+    max-width: 100%;
+    text-align: left;
+    padding: 40px 40px;
+    box-sizing: border-box;
+
+    --error-color: rgb(255, 54, 54);
+}
+
+form {
+    display: grid;
+    gap: 16px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row.center {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-row.center .column {
+    width: 48%;
+}
+
+label {
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 5px;
+    font-weight: 300;
+    font-size: 1.5rem;
+    user-select: none;
+}
+
+input, textarea {
+    padding: 8px;
+    border: 0 1px 0 solid var(--accent-color-2);
+    background-color: var(--bg-textarea);
+    color: var(--text-color);
+    resize: vertical;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    border: 2px solid white;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: var(--error-color);
+    margin-top: 5px;
+    font-size: 0.8em;
+    font-weight: 400;
+    height: 1em;
+}
+
+label .required {
+    color: var(--error-color);
+}

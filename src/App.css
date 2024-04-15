@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.App {
+    /* background: linear-gradient(320deg,#f27121,#e94057,#8a2387); */
+    background: linear-gradient(320deg,#36238a,#4092e9,#21f2d3);
+    /* background: linear-gradient(320deg,#cdcadf,#c1cfdf,#a2e2d8); */
+    text-align: center;
+
+    --bg-color-glass: rgba(255, 255, 255, 0.3);
+    --default-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    height: 100%;
+}
+
+.App .glass {
+    background-color: var(--bg-color-glass);
+    backdrop-filter: blur(4.3px);
+    -webkit-backdrop-filter: blur(4.3px);
+    box-shadow: var(--default-shadow);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: rgb(0, 0, 0);
+}
+
+.App a {
+    color: rgb(0, 191, 255);
+    text-decoration: none;
+    font-weight: 800;
+}
