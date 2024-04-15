@@ -5,6 +5,7 @@
     text-align: left;
     padding: 40px 40px;
     box-sizing: border-box;
+    z-index: 2;
 
     --error-color: rgb(255, 54, 54);
 }
