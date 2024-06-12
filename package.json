@@ -1,7 +1,7 @@
 {
   "name": "mpk_app",
   "version": "0.1.0",
-  "homepage": "https://CarlosCarras.github.io/mpk-selection-tool",
+  "homepage": "https://CarlosCarras.github.io/mpk-recommendation-tool",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
