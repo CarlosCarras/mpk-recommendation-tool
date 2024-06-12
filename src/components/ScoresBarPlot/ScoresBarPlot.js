@@ -6,7 +6,9 @@ function ScoresBarPlot({ data, names}) {
     const width = 380;
     const height = 400;
     const svgRef = useRef(null);
-    const colors = ['#FBA834', '#e94057', '#8a2387', '#1ABC9C', '#472f5b']
+    // const colors = ['#FBA834', '#e94057', '#8a2387', '#1ABC9C', '#472f5b']
+    // const colors = ['#053f5c', '#429ebd', '#9fe7f5', '#f7ad19', '#f27f0c']
+    const colors = ['#69ddff', '#b8e1ff', '#ab87ff', '#fface4', '#fdc5f5', '#ffccdf']
 
     useEffect(() => {
         const svg = d3.select(svgRef.current);

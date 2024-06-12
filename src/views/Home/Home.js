@@ -36,7 +36,7 @@ function Home() {
 
     return (
         <div className="home-container">
-            <h1>MPK Selection Tool</h1>
+            <h1>MPK Recommendation Tool</h1>
             <br/>
             <div className="home-row">
                 <PatientForm default={defaults} onUpdate={onUpdate}/>
@@ -44,7 +44,7 @@ function Home() {
                     <div className="button-container">
                         <select name="visaulization" id="visaulization" value={visualizationSelected} onChange={handleVisualizationChange}>
                             <option value="knee">By Knee</option>
-                            <option value="metric">By Metric</option>
+                            <option value="outcome">By Outcome</option>
                         </select>
                     </div>
                     {

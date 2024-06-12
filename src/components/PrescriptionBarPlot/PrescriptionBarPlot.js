@@ -6,7 +6,7 @@ function PrescriptionBarPlot({ data, names}) {
     const width = 380;
     const height = 400;
     const svgRef = useRef(null);
-    const colors = ['#FBA834', '#e94057', '#8a2387']
+    const colors = ['#99d3ec', '#ffe08b', '#def090']
     // const colors = ['#ff5a5e', '#55c6cc', '#b8b8b8']
 
     useEffect(() => {
@@ -74,7 +74,7 @@ function PrescriptionBarPlot({ data, names}) {
             .style("fill", "white")
             .style("font-size", "16px")
             .style("font-weight", "bold")
-            .text("Likelihood of Success");
+            .text("Recommendation Score");
 
         // Create bars with different colors
         svg

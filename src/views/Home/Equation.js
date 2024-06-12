@@ -32,7 +32,8 @@ function computeBmiScore(bmi, low_in, high_in, low_out, high_out) {
 export function normalizeData(data) {
     const scores = {
         'Agility': remap(data.ampnopro, 32, 42, 0.1, 1),
-        'Community': (0.6 * remap(data.likelihoodStairs, 1, 5, 0, 1) + 0.4 * remap(data.likelihoodRamps, 1, 5, 0, 1)),
+        'Stairs': remap(data.likelihoodStairs, 1, 5, 0, 1),
+        'Ramps': remap(data.likelihoodRamps, 1, 5, 0, 1),
         'Stability': remap(data.age, 30, 65, 0.1, 1),
         'Energy': computeBmiScore(data.bmi, 18.5, 30, 0.1, 1),
         'Gait Quality': 1
@@ -44,43 +45,49 @@ export function normalizeData(data) {
 const weights = {
     cleg: {
         agility: 1.0,
-        community: 0.77,
-        stability: 0.91, 
+        stairs: 0.5349649920547173,
+        ramps: 1.0, 
+        stability: 0.9080267559564825, 
         energy: 1.0,
-        gc: 0.92
+        gc: 0.9245005547074785
     },
     power: {
-        agility: 0.89,
-        community: 0.91,
-        stability: 0.78, 
-        energy: 0.85,
+        agility: 0.88922397209,
+        stairs: 0.9386492763613347,
+        ramps: 0.7215236324704396, 
+        stability: 0.7775919732426539, 
+        energy: 0.8500959540855868,
         gc: 1.0
     },
     rheo: {
-        agility: 0.94,
-        community: 1.0,
+        agility: 0.93712915547,
+        stairs: 1.0,
+        ramps: 0.8315310906624779, 
         stability: 1.0, 
-        energy: 0.92,
-        gc: 0.83
+        energy: 0.9234430626477406,
+        gc: 0.8279907133822905
     }
 }
 
 export default function equation(scores) {
     let results = {
         cleg: weights.cleg.agility * scores['Agility'] + 
-              weights.cleg.community * scores['Community'] +
+              weights.cleg.stairs * scores['Stairs'] +
+              weights.cleg.ramps * scores['Ramps'] +
               weights.cleg.stability * scores['Stability'] + 
               weights.cleg.energy * scores['Energy'] + 
               weights.cleg.gc * scores['Gait Quality'],
 
         power: weights.power.agility * scores['Agility'] + 
-              weights.power.community * scores['Community'] +
+              weights.power.stairs * scores['Stairs'] +
+              weights.power.ramps * scores['Ramps'] +
               weights.power.stability * scores['Stability'] + 
               weights.power.energy * scores['Energy'] + 
               weights.power.gc * scores['Gait Quality'],
 
         rheo: weights.rheo.agility * scores['Agility'] + 
-              weights.rheo.community * scores['Community'] +
+              weights.rheo.stairs * scores['Stairs'] +
+              weights.rheo.ramps * scores['Ramps'] +
               weights.rheo.stability * scores['Stability'] + 
               weights.rheo.energy * scores['Energy'] + 
               weights.rheo.gc * scores['Gait Quality'],

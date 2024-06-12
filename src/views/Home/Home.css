@@ -12,12 +12,13 @@
 .home-container h1 {
     color: rgba(255, 255, 255, 0.9);
     text-shadow: 0 4px 10px rgba(0,0,0,.2);
-    /* color: rgba(0, 0, 0, 0.6);
-    text-shadow: 0 4px 10px rgba(0,0,0,.1); */
+    font-weight: 550;
+    /* color: rgba(0, 0, 0, 1); */
+    /* text-shadow: 0 4px 10px rgba(0,0,0,.1); */
+    /* font-weight: 400; */
     font-family: "Roboto", sans-serif;
     font-size: calc(15px + 5vw);
     letter-spacing: -0.05cap;
-    font-weight: 550;
     margin: 20px 0 0;
 }
 
