@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 
-import PatientForm from './../../components/PatientForm/PatientForm';
+import PatientForm from '../../components/UserForms/PatientForm';
+import ScoresForm from '../../components/UserForms/ScoresForm';
 import PrescriptionBarPlot from './../../components/PrescriptionBarPlot/PrescriptionBarPlot';
 import ScoresBarPlot from "../../components/ScoresBarPlot/ScoresBarPlot";
 import './Home.css'
@@ -23,11 +24,17 @@ function Home() {
     const [userResults, setUserResults] = useState(defaultResults);
     const [visualizationSelected, setVisualizationSelected] = useState("knee");
 
-    const onUpdate = (userData) => {
-        const scores = normalizeData(userData);
+    const onUpdateScoresForm = (scores) => {
         const results = equation(scores);
-        setUserScores(scores)
+
+        setUserScores(scores);
         setUserResults(results);
+    }
+
+    const onUpdatePatientProfile = (userData) => {
+        const scores = normalizeData(userData);
+    
+        onUpdateScoresForm(scores);
     }
 
     const handleVisualizationChange = (e) => {
@@ -39,8 +46,25 @@ function Home() {
             <h1>MPK Recommendation Tool</h1>
             <br/>
             <div className="home-row">
-                <PatientForm default={defaults} onUpdate={onUpdate}/>
-                <div>
+                <div className="home-form">
+                    <h3>
+                        Step 1
+                        <span> Fill out the user profile. </span>
+                    </h3>
+                    <PatientForm default={defaults} onUpdate={onUpdatePatientProfile}/>
+                </div>
+                <div className="home-form">
+                    <h3>
+                        Step 2
+                        <span> Adjust functional needs as necessary. </span>
+                    </h3>
+                    <ScoresForm default={userScores} onUpdate={onUpdateScoresForm}/>
+                </div>
+                <div className="home-form">
+                    <h3>
+                        Step 3
+                        <span> View your personalized results. </span>
+                    </h3>
                     <div className="button-container">
                         <select name="visaulization" id="visaulization" value={visualizationSelected} onChange={handleVisualizationChange}>
                             <option value="knee">By Knee</option>

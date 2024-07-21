@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
-import './PatientForm.css'
+import './FormStyles.css'
 
-import Slider from './../../components/Slider/Slider';
+import Slider from '../Slider/Slider';
 
 
 function PatientForm(props) {
@@ -44,7 +44,7 @@ function PatientForm(props) {
     }
 
     return (
-        <div className="patientform-container glass">
+        <div className="form-container glass">
             <form onSubmit={handleSubmit}>
                 <div className="form-row">
                     <label>Age</label>

@@ -53,6 +53,16 @@
     padding: 1em 2em;
 }
 
+.home-container .home-form h3 {
+    text-align: left;
+    padding: 0.5em 1em;
+    font-weight: 800;
+}
+
+.home-container .home-form h3 span {
+    font-weight: 300;
+}
+
 /* Decorations */
 .decorations-wrapper {
     overflow: hidden;

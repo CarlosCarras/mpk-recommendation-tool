@@ -6,7 +6,7 @@
     /* background: linear-gradient(320deg,#cdcadf,#c1cfdf,#a2e2d8); */
     text-align: center;
 
-    --bg-color-glass: rgba(255, 255, 255, 0.3);
+    --bg-color-glass: rgba(255, 255, 255, 0.4);
     --default-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
     height: 100%;
 }

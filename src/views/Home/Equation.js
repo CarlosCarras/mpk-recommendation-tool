@@ -24,7 +24,8 @@ function computeBmiScore(bmi, low_in, high_in, low_out, high_out) {
     if (bmi > healthy_bmi)
         score = remap(bmi, healthy_bmi, high_in, low_out, high_out)
     else
-        score = remap(bmi, low_in, healthy_bmi, high_out, low_out)
+        score = low_out
+        // score = remap(bmi, low_in, healthy_bmi, high_out, low_out)
 
     return score
 }
