@@ -64,16 +64,16 @@ function ScoresForm(props) {
         <div className="form-container glass">
             <form onSubmit={handleSubmit}>
                 <div className="form-row">
+                    <label>Stability</label>
+                    <Slider min={0} max={1} default={stabilityScore} step={0.01} precision={2} onChange={handleStabilityChange} snap={false}/>
+                    <label>Energy</label>
+                    <Slider min={0} max={1} default={energyScore} step={0.01} precision={2} onChange={handleEnergyChange} snap={false}/>
                     <label>Agility</label>
                     <Slider min={0} max={1} default={agilityScore} step={0.01} precision={2} onChange={handleAgilityChange} snap={false}/>
                     <label>Stairs</label>
                     <Slider min={0} max={1} default={stairsScore} step={0.01} precision={2} onChange={handleStairsChange} snap={false}/>
                     <label>Ramps</label>
                     <Slider min={0} max={1} default={rampsScore} step={0.01} precision={2} onChange={handleRampsChange} snap={false}/>
-                    <label>Stability</label>
-                    <Slider min={0} max={1} default={stabilityScore} step={0.01} precision={2} onChange={handleStabilityChange} snap={false}/>
-                    <label>Energy</label>
-                    <Slider min={0} max={1} default={energyScore} step={0.01} precision={2} onChange={handleEnergyChange} snap={false}/>
                     <label>Gait Quality</label>
                     <Slider min={0} max={1} default={gaitqualityScore} step={0.01} precision={2} onChange={handleGaitQualityChange} snap={false}/>
                 </div>
