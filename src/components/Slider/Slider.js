@@ -35,6 +35,7 @@ function Slider(props) {
         return value;
     }
 
+    /* conversion functions */
     const position2value = useCallback((position) => {
         const normalized = position / sliderRef.current.getBoundingClientRect().width;
         const value = normalized * (maxValue - minValue) + minValue;
@@ -47,6 +48,7 @@ function Slider(props) {
         return position;
     }, [minValue, maxValue]);
 
+    /* position snapping callback */
     const snapToPosition = useCallback((position) => {
         if (snapPositions === null) {
             return position;
@@ -63,12 +65,28 @@ function Slider(props) {
         setInputValue(closest.toPrecision(props.precision));
     }, [snapPositions, position2value, value2position, props.precision]);
 
+    /* updates slider position when parent default value changes */
     useEffect(() => {
         const initialPosition = value2position(defaultValue);
         setSliderPosition(initialPosition);
         setInputValue(defaultValue.toPrecision(props.precision));
     }, [defaultValue, props.precision, value2position]);
 
+    /* if the window is resized, update slider position */
+    useEffect(() => {
+        const handleResize = () => {
+            const newPosition = value2position(inputValue);
+            setSliderPosition(newPosition);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [inputValue, value2position]);
+
+    /* allow for mouse click and drag to change position */
     useEffect(() => {
         const handlePositionChange = (clientX) => {
             const sliderRect = sliderRef.current.getBoundingClientRect();
