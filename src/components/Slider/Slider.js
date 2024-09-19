@@ -161,7 +161,7 @@ function Slider(props) {
 
     const handleInputUpdate = (event) => {
         const value = event.target.value;
-        const newPosition = value2position(event.target.value);
+        const newPosition = value2position(limit(event.target.value, minValue, maxValue));
         setInputValue(value);
         setSliderPosition(newPosition);
 
