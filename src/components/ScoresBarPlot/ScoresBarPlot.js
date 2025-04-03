@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import "./ScoresBarPlot.css";
 
 function ScoresBarPlot({ data, names}) {
-    const width = 380;
+    const width = 300;
     const height = 400;
     const svgRef = useRef(null);
     // const colors = ['#FBA834', '#e94057', '#8a2387', '#1ABC9C', '#472f5b']

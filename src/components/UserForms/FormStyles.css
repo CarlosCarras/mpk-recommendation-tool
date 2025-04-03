@@ -1,7 +1,6 @@
 .form-container {
     border-radius: 0.5em;
-    width: min(80vw, 400px);
-    max-width: 100%;
+    width: 100%;
     text-align: left;
     padding: 40px 40px;
     box-sizing: border-box;
@@ -26,14 +25,14 @@ form {
 }
 
 .form-row.center .column {
-    width: 48%;
+    width: 30%;
 }
 
 label {
     color: rgba(0, 0, 0, 0.7);
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     user-select: none;
 }
 

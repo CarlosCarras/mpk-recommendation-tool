@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import "./PrescriptionBarPlot.css";
 
 function PrescriptionBarPlot({ data, names}) {
-    const width = 380;
+    const width = 300;
     const height = 400;
     const svgRef = useRef(null);
     const colors = ['#99d3ec', '#ffe08b', '#def090']

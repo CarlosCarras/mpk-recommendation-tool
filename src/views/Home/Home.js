@@ -43,7 +43,7 @@ function Home() {
 
     return (
         <div className="home-container">
-            <h1>MPK Recommendation Tool</h1>
+            <h1>Microprocessor Knee Recommendation Tool</h1>
             <br/>
             <div className="home-row">
                 <div className="home-form">
