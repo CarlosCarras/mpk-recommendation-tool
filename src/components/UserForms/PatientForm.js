@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import './FormStyles.css'
 
 import Slider from '../Slider/Slider';
+import HelpIcon from "../HelpIcon/HelpIcon";
 
 
 function PatientForm(props) {
@@ -43,6 +44,8 @@ function PatientForm(props) {
         e.preventDefault();
     }
 
+    const likelihoodHelp = () => <HelpIcon tooltip={"1 = least likely\n5 = most likely"} />
+
     return (
         <div className="form-container glass">
             <form onSubmit={handleSubmit}>
@@ -53,9 +56,9 @@ function PatientForm(props) {
                     <Slider min={15} max={35} default={default_bmi} step={0.1} precision={3} onChange={handleBmiChange} snap={true}/>
                     <label>AmpNoPro</label>
                     <Slider min={23} max={45} default={default_ampnopro} step={1} precision={2} onChange={handleAmpnoproChange} snap={true}/>
-                    <label>Likelihood of Stairs</label>
+                    <label>Likelihood of Stairs {likelihoodHelp()} </label>
                     <Slider min={1} max={5} default={default_likelihoodStairs} step={1} precision={1} onChange={handleLikelihoodStairsChange} snap={true}/>
-                    <label>Likelihood of Ramps</label>
+                    <label>Likelihood of Ramps {likelihoodHelp()} </label>
                     <Slider min={1} max={5} default={default_likelihoodRamps} step={1} precision={1} onChange={handleLikelihoodRampsChange} snap={true}/>
                 </div>
             </form>

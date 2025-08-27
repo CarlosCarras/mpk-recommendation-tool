@@ -4,6 +4,7 @@ import PatientForm from '../../components/UserForms/PatientForm';
 import ScoresForm from '../../components/UserForms/ScoresForm';
 import PrescriptionBarPlot from './../../components/PrescriptionBarPlot/PrescriptionBarPlot';
 import ScoresBarPlot from "../../components/ScoresBarPlot/ScoresBarPlot";
+import HelpIcon from "../../components/HelpIcon/HelpIcon";
 import './Home.css'
 
 import equation, { normalizeData } from "./Equation";
@@ -41,6 +42,12 @@ function Home() {
         setVisualizationSelected(e.target.value)
     }
 
+    const step2Help = () => <HelpIcon tooltip={"0 = not important\n1 = very important"} width={120}/>
+
+    const recommendation = Object.entries(userResults).reduce((a, b) =>
+        a[1] > b[1] ? a : b
+    )[0];
+
     return (
         <div className="home-container">
             <h1>Microprocessor Knee Recommendation Tool</h1>
@@ -49,21 +56,22 @@ function Home() {
                 <div className="home-form">
                     <h3>
                         Step 1
-                        <span> Fill out the user profile. </span>
+                        <span> Fill out the user profile </span>
                     </h3>
                     <PatientForm default={defaults} onUpdate={onUpdatePatientProfile}/>
                 </div>
                 <div className="home-form">
                     <h3>
                         Step 2
-                        <span> Adjust functional needs as necessary. </span>
+                        <span> Adjust functional needs as necessary {step2Help()}
+                        </span>
                     </h3>
                     <ScoresForm default={userScores} onUpdate={onUpdateScoresForm}/>
                 </div>
                 <div className="home-form">
                     <h3>
                         Step 3
-                        <span> View your personalized results. </span>
+                        <span> View your personalized results </span>
                     </h3>
                     <div className="button-container">
                         <select name="visaulization" id="visaulization" value={visualizationSelected} onChange={handleVisualizationChange}>
@@ -78,6 +86,9 @@ function Home() {
                             <ScoresBarPlot data={userScores}/>
                     }
                 </div>
+            </div>
+            <div className="home-row">
+                <span id="recommendation">Recommendation: {recommendation}</span>
             </div>
             <div className="home-row">
                 <p className="glass"> 
