@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mpk-recommendation-tool/static/css/main.ab911dcb.css",
-    "main.js": "/mpk-recommendation-tool/static/js/main.3216c1b6.js",
+    "main.js": "/mpk-recommendation-tool/static/js/main.96079a54.js",
     "static/js/453.eb8718f6.chunk.js": "/mpk-recommendation-tool/static/js/453.eb8718f6.chunk.js",
     "index.html": "/mpk-recommendation-tool/index.html",
     "main.ab911dcb.css.map": "/mpk-recommendation-tool/static/css/main.ab911dcb.css.map",
-    "main.3216c1b6.js.map": "/mpk-recommendation-tool/static/js/main.3216c1b6.js.map",
+    "main.96079a54.js.map": "/mpk-recommendation-tool/static/js/main.96079a54.js.map",
     "453.eb8718f6.chunk.js.map": "/mpk-recommendation-tool/static/js/453.eb8718f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ab911dcb.css",
-    "static/js/main.3216c1b6.js"
+    "static/js/main.96079a54.js"
   ]
 }
