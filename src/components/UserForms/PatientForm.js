@@ -44,7 +44,7 @@ function PatientForm(props) {
         e.preventDefault();
     }
 
-    const likelihoodHelp = () => <HelpIcon tooltip={"1 = least likely\n5 = most likely"} />
+    const likelihoodHelp = () => <HelpIcon tooltip={"1 = extemely unlikely\n2 = unlikely\n3 = neutral\n4 = likely\n5 = extremely likely"} width={140}/>
 
     return (
         <div className="form-container glass">
@@ -56,9 +56,9 @@ function PatientForm(props) {
                     <Slider min={15} max={35} default={default_bmi} step={0.1} precision={3} onChange={handleBmiChange} snap={true}/>
                     <label>AmpNoPro</label>
                     <Slider min={23} max={45} default={default_ampnopro} step={1} precision={2} onChange={handleAmpnoproChange} snap={true}/>
-                    <label>Likelihood of Stairs {likelihoodHelp()} </label>
+                    <label>Daily Likelihood of Climbing Up/Down Stairs {likelihoodHelp()} </label>
                     <Slider min={1} max={5} default={default_likelihoodStairs} step={1} precision={1} onChange={handleLikelihoodStairsChange} snap={true}/>
-                    <label>Likelihood of Ramps {likelihoodHelp()} </label>
+                    <label>Daily Likelihood of Walking Up/Down Ramps {likelihoodHelp()} </label>
                     <Slider min={1} max={5} default={default_likelihoodRamps} step={1} precision={1} onChange={handleLikelihoodRampsChange} snap={true}/>
                 </div>
             </form>

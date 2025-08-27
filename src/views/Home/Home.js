@@ -42,7 +42,7 @@ function Home() {
         setVisualizationSelected(e.target.value)
     }
 
-    const step2Help = () => <HelpIcon tooltip={"0 = not important\n1 = very important"} width={120}/>
+    const step2Help = () => <HelpIcon tooltip={"0 = not important\n1 = very important"}/>
 
     const recommendation = Object.entries(userResults).reduce((a, b) =>
         a[1] > b[1] ? a : b
