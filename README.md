@@ -1,6 +1,6 @@
-# MPK Recommendation Tool
+# Microprocessor Knee Recommendation Tool
 
-Welcome to the repository that stores the source code for the MPK Recommendation Tool web app. 
+Welcome to the repository that stores the source code for the Microprocessor Knee Recommendation Tool web app. 
 
 ____
 
